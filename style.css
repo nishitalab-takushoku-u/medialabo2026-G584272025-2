@@ -1,5 +1,9 @@
 p{
+    background-color:
 }
 h1{
-    border-bottom:red;
+    border-bottom:solid red;
+}
+div#zentai > div{
+    background-color: #ffefaf;
 }
