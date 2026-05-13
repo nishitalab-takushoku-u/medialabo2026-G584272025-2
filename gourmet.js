@@ -5,6 +5,7 @@ function print(data) {
   console.log("店名："+data.results.shop[0].name)
   console.log(data.results.shop[0].address)
   console.log(data.results.shop[0].catch) 
+  console.log(data.results.shop[0].)
 }
 
 // 課題5-1 の関数 printDom() はここに記述すること
