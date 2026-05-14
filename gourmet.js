@@ -3,9 +3,13 @@
 function print(data) {
   console.log("1件目の検索結果")
   console.log("店名："+data.results.shop[0].name)
-  console.log(data.results.shop[0].address)
-  console.log(data.results.shop[0].catch) 
-  console.log(data.results.shop[0].)
+  console.log("キャッチコピー："+data.results.shop[0].budget.name)
+  console.log("住所："+data.results.shop[0].address)
+  console.log("キャッチコピー："+data.results.shop[0].catch) 
+  console.log("サブジャンル："+data.results.shop[0].sub_genre.name)
+  console.log("営業日時："+data.results.shop[0].open) 
+  console.log("アクセス"+data.results.shop[0].access)
+  console.log("最寄駅"+data.results.shop[0].station_name)
 }
 
 // 課題5-1 の関数 printDom() はここに記述すること
