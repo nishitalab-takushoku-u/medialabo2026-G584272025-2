@@ -14,11 +14,16 @@ function print(data) {
 
 // 課題5-1 の関数 printDom() はここに記述すること
 function printDom(data) {
-
 }
-  let d=document.createElement('div#result');
-  let b=document.querySelector('body');
-  b.insertAdjacentElement('beforeend',d);
+
+let d=document.createElement('div');
+d.setAttribute('id', 'result');
+let b=document.querySelector('body');
+b.insertAdjacentElement('beforeend', d);
+
+  let p = document.createElement('p');
+  p.textContent = '文章です';
+  result.insertAdjacentElement('beforeend', p);
 
 // 課題6-1 のイベントハンドラ登録処理は以下に記述
 
