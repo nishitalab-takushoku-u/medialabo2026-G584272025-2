@@ -16,6 +16,9 @@ function print(data) {
 function printDom(data) {
 
 }
+  let d=document.createElement('div#result');
+  let b=document.querySelector('body');
+  b.insertAdjacentElement('beforeend',d);
 
 // 課題6-1 のイベントハンドラ登録処理は以下に記述
 
