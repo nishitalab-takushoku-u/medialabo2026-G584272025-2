@@ -3,6 +3,8 @@
 function print(data) {
   console.log("1件目の検索結果")
   console.log("店名："+data.results.shop[0].name)
+  console.log(data.results.shop[0].photo.pc.m)
+  console.log("予算："+data.results.shop[0].budget.name)
   console.log("キャッチコピー："+data.results.shop[0].budget.name)
   console.log("住所："+data.results.shop[0].address)
   console.log("キャッチコピー："+data.results.shop[0].catch) 
@@ -13,30 +15,87 @@ function print(data) {
 }
 
 // 課題5-1 の関数 printDom() はここに記述すること
+
+let e=0;
 function printDom(data) {
+  if(e>0){
+    let r=document.querySelector('div#result');
+     r.remove();
+  }
+  let d=document.createElement('div');
+  d.setAttribute('id', 'result');
+  let b=document.querySelector('body');
+  b.insertAdjacentElement('beforeend', d);
+  let q;
+  
+  
+  for(let n of data.results.shop){
+    let y=document.createElement('div');
+    y.setAttribute('id', 'koko');
+    d.insertAdjacentElement('beforeend',y);
+    q=document.createElement('h2'); 
+    q.textContent="店名："+n.name;
+    y.insertAdjacentElement('beforeend',q); 
+
+    let a =document.createElement('img');
+    a.setAttribute('id','photo');
+    a.setAttribute('src',n.photo.pc.m);
+    let x=a.width;
+    if(x!==0){
+      result.insertAdjacentElement('beforeend',a);
+    }
+
+    q=document.createElement('p');
+    q .textContent="住所："+n.address;
+    result.insertAdjacentElement('beforeend',q);
+    q=document.createElement('p');
+    q .textContent="予算："+n.budget.name;
+    result.insertAdjacentElement('beforeend',q);
+    q=document.createElement('p');
+    q .textContent="キャッチコピー："+n.catch
+    result.insertAdjacentElement('beforeend',q);
+    q=document.createElement('p');
+    q .textContent="ジャンル："+n.genre.name
+    result.insertAdjacentElement('beforeend',q);
+    q=document.createElement('p');
+    q .textContent="営業日時："+n.open
+    result.insertAdjacentElement('beforeend',q);
+    q=document.createElement('p');
+    q .textContent="アクセス："+n.access
+    result.insertAdjacentElement('beforeend',q);
+    q=document.createElement('p');
+    q .textContent="最寄駅："+n.station_name
+    result.insertAdjacentElement('beforeend',q);
+  }
+  e=e+1;
+  q=document.createElement('p');
+  q.textContent="検索結果は以上です。"
+  result.insertAdjacentElement('beforeend',q);
 }
 
-let d=document.createElement('div');
-d.setAttribute('id', 'result');
-let b=document.querySelector('body');
-b.insertAdjacentElement('beforeend', d);
 
-  let p = document.createElement('p');
-  p.textContent = '文章です';
-  result.insertAdjacentElement('beforeend', p);
+
 
 // 課題6-1 のイベントハンドラ登録処理は以下に記述
-
-
-
+let b=document.querySelector('button#calc');
+b.addEventListener('click', sendRequest); 
 
 // 課題6-1 のイベントハンドラ sendRequest() の定義
 function sendRequest() {
-
+  let n=document.querySelector('input#s');
+  genre=n.value;
+  let url='https://www.nishita-lab.org/web-contents/jsons/hotpepper/'+genre+'.json';
+  axios.get(url)
+		.then(showResult)
+		.catch(showError)
+		.then(finish);
 }
-
+//テキストボックスなどからgenreを読み取る
+//let url='https~/'+genre+'j.son;
 // 課題6-1: 通信が成功した時の処理は以下に記述
 function showResult(resp) {
+  let data=resp.data;
+  printDom(data);
 
 }
 

@@ -4,3 +4,9 @@ h1{
 h1{
     border-bottom:solid red;
 }
+img.photo{
+    float: rigth;
+}
+div.result{
+    display:flex;
+}
