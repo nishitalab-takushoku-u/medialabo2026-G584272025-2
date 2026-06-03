@@ -26,9 +26,9 @@ function printDom(data) {
   let b=document.querySelector('body');
   b.insertAdjacentElement('beforeend', d);
   let q;
-  
-  
+  let i=0;
   for(let n of data.results.shop){
+    i=i+1;
     let y=document.createElement('div');
     y.setAttribute('id', 'koko');
     d.insertAdjacentElement('beforeend',y);
@@ -36,18 +36,20 @@ function printDom(data) {
     q.textContent="店名："+n.name;
     y.insertAdjacentElement('beforeend',q); 
     let a =document.createElement('img');
-    a.setAttribute('id','photo');
+    a.setAttribute('id','photo'+i);
     a.setAttribute('src',n.photo.pc.m);
+    y.insertAdjacentElement('beforeend',a);
     let x=a.width;
-    if(x!==0){
-      y.insertAdjacentElement('beforeend',a);
+    let u=document.querySelector('#photo'+i);
+    if(x===0){
+      u.remove();
     }
 
     q=document.createElement('p');
-    q .textContent="住所："+n.address;
+    q .textContent="住所："+n.address
     y.insertAdjacentElement('beforeend',q);
     q=document.createElement('p');
-    q .textContent="予算："+n.budget.name;
+    q .textContent="予算："+n.budget.name
     y.insertAdjacentElement('beforeend',q);
     q=document.createElement('p');
     q .textContent="キャッチコピー："+n.catch
@@ -55,6 +57,12 @@ function printDom(data) {
     q=document.createElement('p');
     q .textContent="ジャンル："+n.genre.name
     y.insertAdjacentElement('beforeend',q);
+    q=document.createElement('p');
+    if(n.sub_genre){
+      q.textContent="サブジャンル："+n.sub_genre.name
+      y.insertAdjacentElement('beforeend',q);
+
+    }
     q=document.createElement('p');
     q .textContent="営業日時："+n.open
     y.insertAdjacentElement('beforeend',q);
