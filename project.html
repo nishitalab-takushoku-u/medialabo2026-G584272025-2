@@ -11,41 +11,29 @@
     <body>
         <h1>グルメ情報</h1>
         <h2>飲食店の情報を検索できます！</h2>
-        <p><input type="radio" name="genre">
-            <label for="居酒屋">居酒屋</label>
-            <input type="radio" name="genre">
-            <label for="ダイニングバー">ダイニングバー・バル</label>
-            <input type="radio" name="genre">
-            <label for="創作料理">創作料理</label>
-            <input type="radio" name="genre">
-            <label for="和食">和食</label>
-            <input type="radio" name="genre">
-            <label for="洋食">洋食</label>
-            <input type="radio" name="genre">
-            <label for="イタリアン・フレンチ">イタリアン・フレンチ</label>
-            <input type="radio" name="genre">
-            <label for="中華">中華</label>
-            <input type="radio" name="genre">
-            <label for="焼肉・フォルモン">焼肉・フォルモン</label>
-            <input type="radio" name="genre">
-            <label for="アジア・エスニック料理">アジア・エスニック料理</label>
-            <input type="radio" name="genre">
-            <label for="各国料理">各国料理</label>
-            <input type="radio" name="genre">
-            <label for="カラオケ・パーティ">パーティ</label>
-            <input type="radio" name="genre">
-            <label for="バー・カクテル">バー・カクテル</label>
-            <input type="radio" name="genre">
-            <label for="ラーメン">ラーメン</label>
-            <input type="radio" name="genre">
-            <label for="カフェ・スイーツ">カフェ・スイーツ</label>
-            <input type="radio" name="genre">
-            <label for="その他のグルメ">その他のグルメ</label>
-            <input type="radio" name="genre">
-            <label for="お好み焼き・もんじゃ">お好み焼き・もんじゃ</label>
-            <input type="radio" name="genre">
-            <label for="韓国料理">韓国料理</label>
-        </p>
+        <label for="gurume">ジャンル</label>
+        <select name="gurume" id="gurume">
+            <option value="">ジャンルを選んでください</option>
+            <option value="G001">居酒屋</option>
+            <option value="G002">ダイニングバー・バル</option>
+            <option value="G003">創作料理</option>
+            <option value="G004">和食</option>
+            <option value="G005">洋食</option>
+            <option value="G006">イタリア・フレンチ</option>
+            <option value="G007">中華</option>
+            <option value="G008">焼肉・ホルモン</option>
+            <option value="G009">アジア・エスニック料理</option>
+            <option value="G010">各国料理</option>
+            <option value="G011">カラオケ・パーティ</option>
+            <option value="G012">バー・カクテル</option>
+            <option value="G013">ラーメン</option>
+            <option value="G014">カフェ・スイーツ</option>
+            <option value="G015">その他のグルメ</option>
+            <option value="G016">お好み焼き・もんじゃ</option>
+            <option value="G017">韓国料理</option>
+
+        </select>
+            <button id="print">値を取得</button>
         <p>
 	      <label for="s">検索キー:</label>
           <input type="search" name="s" id="s">
