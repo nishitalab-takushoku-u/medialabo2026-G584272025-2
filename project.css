@@ -8,7 +8,7 @@ body{
 }
 select{
   background-color: white;
-  border:1px solid #999;
+  border:1px solid #898888;
 }
 
 div#koko{
@@ -16,11 +16,6 @@ div#koko{
   border-radius:16px;
   margin:20px;
   padding:5px 20px 20px 15px;
-  margin-right:50px;
-}
-
-img#photo{
-  border-radius:12px;
 }
 h1{
   text-align:center;
@@ -35,5 +30,15 @@ h2{
   font-size:22px;
 }
 h3{
-  font-size:30px;
+  font-size:28px;
+  color:#d97742;
+  font-weight:bold;
+  display:inline-block;
+  border-bottom:4px solid #ffb27a;
+  padding-bottom:6px;
+}
+p{
+  color:#570808;
+  line-height:1.5;
+
 }

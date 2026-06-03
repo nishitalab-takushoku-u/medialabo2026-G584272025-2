@@ -38,15 +38,6 @@ function printDom(data) {
     q=document.createElement('h3'); 
     q.textContent="店名："+n.name;
     y.insertAdjacentElement('beforeend',q); 
-    let a =document.createElement('img');
-    a.setAttribute('id','photo'+i);
-    a.setAttribute('src',n.photo.pc.m);
-    y.insertAdjacentElement('beforeend',a);
-    let x=a.width;
-    let u=document.querySelector('#photo'+i);
-    if(x===0){
-      u.remove();
-    }
 
     q=document.createElement('p');
     q .textContent="住所："+n.address
@@ -75,9 +66,6 @@ function printDom(data) {
     q=document.createElement('p');
     q .textContent="最寄駅："+n.station_name
     y.insertAdjacentElement('beforeend',q);
-    if(x===0){
-      u.remove();
-    }
   }
   e=e+1;
   q=document.createElement('p');
