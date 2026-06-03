@@ -1,16 +1,19 @@
 
 // 課題3-2 のプログラムはこの関数の中に記述すること
 function print(data) {
-  console.log("1件目の検索結果")
-  console.log("店名："+data.results.shop[0].name)
-  console.log(data.results.shop[0].photo.pc.m)
-  console.log("予算："+data.results.shop[0].budget.name)
-  console.log("住所："+data.results.shop[0].address)
-  console.log("キャッチコピー："+data.results.shop[0].catch) 
-  console.log("サブジャンル："+data.results.shop[0].genre.name)
-  console.log("営業日時："+data.results.shop[0].open) 
-  console.log("アクセス"+data.results.shop[0].access)
-  console.log("最寄駅"+data.results.shop[0].station_name)
+  for(let n of data.results.shop){
+    console.log("店名："+n.name)
+    console.log(n.photo.pc.m)
+    console.log("予算："+n.budget.name)
+    console.log("住所："+n.address)
+    console.log("キャッチコピー："+n.catch) 
+    console.log("ジャンル："+n.genre.name)
+    console.log("サブジャンル："+n.sub_genre.name)
+    console.log("営業日時："+n.open) 
+    console.log("アクセス"+n.access)
+    console.log("最寄駅"+n.station_name)
+  }
+
 }
 
 // 課題5-1 の関数 printDom() はここに記述すること
@@ -72,6 +75,9 @@ function printDom(data) {
     q=document.createElement('p');
     q .textContent="最寄駅："+n.station_name
     y.insertAdjacentElement('beforeend',q);
+    if(x===0){
+      u.remove();
+    }
   }
   e=e+1;
   q=document.createElement('p');
